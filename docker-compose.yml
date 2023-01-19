@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  db:
+    image: mariadb
+    environment:
+      #- MARIADB_ROOT_PASSWORD=
+      - MARIADB_ALLOW_EMPTY_ROOT_PASSWORD=true
+
+  app:
+    build: .
+    depends_on:
+      - db
+    environment:
+      - SERVER_HOST=0.0.0.0
+    ports:
+      - 3000
