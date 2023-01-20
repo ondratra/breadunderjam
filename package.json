@@ -6,9 +6,15 @@
   "scripts": {
     "build": "tsc",
     "start": "node --experimental-specifier-resolution=node dist/src/index.js",
+    "test": "mocha -r ts-node/register -n loader=ts-node/esm -n experimental-specifier-resolution=node tests/index.ts",
     "watch": "tsc -w"
   },
   "devDependencies": {
+    "@types/chai": "^4.3.4",
+    "@types/mocha": "^10.0.1",
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0",
+    "ts-node": "^10.9.1",
     "tslib": "^2.4.1",
     "typescript": "^4.9.4"
   },
@@ -17,6 +23,8 @@
   },
   "dependencies": {
     "@types/node": "^18.11.18",
-    "fastify": "^4.11.0"
+    "fastify": "^4.11.0",
+    "graphql": "^16.6.0",
+    "graphql-request": "^5.1.0"
   }
 }
